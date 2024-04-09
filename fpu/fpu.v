@@ -484,7 +484,7 @@ wire		ov_fasu_del, ov_fmul_del;
 wire	[2:0]	fop;
 wire	[4:0]	ldza_del;
 wire	[49:0]	quo_del;
-
+/*
 delay1  #0 ud000(clk, underflow_fmul1, mul_uf_del);
 delay1  #0 ud001(clk, underflow_fmul_r[0], uf2_del);
 delay1  #0 ud002(clk, underflow_fmul_r[1], ufb2_del);
@@ -512,7 +512,7 @@ always @(test.error_event)
 			ldza_del, quo_del);
    end
 // synopsys translate_on
-
+*/
 
 
 // Status Outputs

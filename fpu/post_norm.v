@@ -562,7 +562,7 @@ wire		rx_del;
 wire		ez_del;
 wire		lr;
 wire	[7:0]	shr, shl, exp_div_del;
-
+/*
 delay2 #26 ud000(clk, test.u0.fracta, fracta_del);
 delay2 #26 ud001(clk, test.u0.fractb, fractb_del);
 delay1  #2 ud002(clk, {g,r,s}, grs_del);
@@ -591,7 +591,8 @@ delay1  #7 ud031(clk, shift_left, shl);
 delay1 #22 ud032(clk, fract_out_rnd2a, fract_out_rnd2a_del);
 
 delay1  #7 ud033(clk, exp_div, exp_div_del);
-
+*/
+/*
 always @(test.error_event)
    begin
 
@@ -617,7 +618,7 @@ always @(test.error_event)
 			fract_out_x_del, fract_out_rnd2a_del, trunc_xx_del);
    end
 
-
+*/
 // synopsys translate_on
 
 endmodule
