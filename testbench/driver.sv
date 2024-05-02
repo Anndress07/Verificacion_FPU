@@ -27,12 +27,15 @@ class driver;
       if(sti.randomize()) // Generate stimulus Se pone 'if' por que el randomize 							puede fallar si tiene constraints que no cumple
         $display("Executing addition\n");
         $display("Driving 0x%h valueA in the DUT\n", sti.valueA);
+      $display("	as float: %f valueA in the DUT\n", $bitstoshortreal(sti.valueA)); // convierte el valorA de 32 bits a un flotante
         $display("Driving 0x%h valueB in the DUT\n", sti.valueB);
+      	$display("	as float: %f valueB in the DUT\n", $bitstoshortreal(sti.valueB));
         intf.rmode = 0;
        	intf.fpu_op = 0;
         intf.opa = sti.valueA;
         intf.opb = sti.valueB;
-      sb.store.push_front(sti.valueA);// Cal exp value and store in Scoreboard
+      sb.store.push_front($shortrealtobits($bitstoshortreal(sti.valueA) + $bitstoshortreal(sti.valueB)));// Se guarda floatA + floatB en sb, pero en su representacion de 
+      																								     // IEEE 754
 
     end
   endtask
